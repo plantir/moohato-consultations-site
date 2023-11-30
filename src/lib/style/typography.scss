@@ -1,0 +1,44 @@
+html {
+	font-family: 'IRANSans', sans-serif;
+}
+
+// h1 to h6
+.text-h1 {
+	@apply text-2xl font-medium text-black;
+}
+.text-h2 {
+	@apply text-2xl font-medium text-black;
+}
+.text-h3 {
+	@apply text-2xl font-medium text-black;
+}
+.text-h4 {
+	@apply text-2xl font-medium text-black;
+}
+.text-h5 {
+	@apply text-2xl font-medium text-black;
+}
+.text-h6 {
+	@apply text-2xl font-medium text-black;
+}
+
+// subtitle
+.text-subtitle-1 {
+	@apply text-sm font-normal text-zinc-700;
+}
+.text-subtitle-2 {
+	@apply text-2xl font-medium text-black;
+}
+
+//  body
+.text-body-1 {
+	@apply text-2xl font-medium text-black;
+}
+.text-body-2 {
+	@apply text-2xl font-medium text-black;
+}
+
+//  caption
+.text-caption {
+	@apply text-2xl font-medium text-black;
+}
