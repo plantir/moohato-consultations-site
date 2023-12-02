@@ -39,6 +39,7 @@
 		"axios": "^1.6.1",
 		"html2canvas": "^1.4.1",
 		"moment-jalaali": "^0.10.0",
-		"wavesurfer.js": "^7.4.5"
+		"swiper": "^11.0.5",
+		"wavesurfer.js": "^7.4.12"
 	}
 }

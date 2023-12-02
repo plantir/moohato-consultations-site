@@ -2011,6 +2011,11 @@ svelte@^4.0.5:
     magic-string "^0.30.4"
     periscopic "^3.1.0"
 
+swiper@^11.0.5:
+  version "11.0.5"
+  resolved "https://registry.yarnpkg.com/swiper/-/swiper-11.0.5.tgz#6ed1ad06e6906ba42fd4b93d4988f0626a49046e"
+  integrity sha512-rhCwupqSyRnWrtNzWzemnBLMoyYuoDgGgspAm/8iBD3jCvAWycPLH4Z3TB0O5520DHLzMx94yUMH/B9Efpa48w==
+
 tailwindcss@^3.1, tailwindcss@^3.2.4:
   version "3.3.5"
   resolved "https://registry.yarnpkg.com/tailwindcss/-/tailwindcss-3.3.5.tgz#22a59e2fbe0ecb6660809d9cc5f3976b077be3b8"
@@ -2167,10 +2172,10 @@ vitefu@^0.2.4:
   resolved "https://registry.yarnpkg.com/vitefu/-/vitefu-0.2.5.tgz#c1b93c377fbdd3e5ddd69840ea3aa70b40d90969"
   integrity sha512-SgHtMLoqaeeGnd2evZ849ZbACbnwQCIwRH57t18FxcXoZop0uQu0uzlIhJBlF/eWVzuce0sHeqPcDo+evVcg8Q==
 
-wavesurfer.js@^7.4.5:
-  version "7.4.5"
-  resolved "https://registry.yarnpkg.com/wavesurfer.js/-/wavesurfer.js-7.4.5.tgz#a66db31fb062ec87c77e2aa01b4f00a6f4ae73fd"
-  integrity sha512-Vwvui02yNlpe8NYCEcPH6KMlLm+0SELyAUsTbqLOdECLamS8iJI3LU8dyAhL7q1XhYHVhmK1i3jD4QtnnpajPQ==
+wavesurfer.js@^7.4.12:
+  version "7.4.12"
+  resolved "https://registry.yarnpkg.com/wavesurfer.js/-/wavesurfer.js-7.4.12.tgz#49fa367d90945ba4f36b2fe557984021f3160d61"
+  integrity sha512-KzH4LkcOp8LECs9cOVIPBl6vsSoICKuZz+v5kh/zvxilpaVszU+QKC+4s2KEAqcCxBCecg3cNSg4RqAx278F8g==
 
 which@^2.0.1:
   version "2.0.2"
