@@ -1,13 +1,18 @@
 <script lang="ts">
 	export let value: any;
 	export let placeholder: string = '';
+	export let items: any = [];
 </script>
 
 <div class=" input-wrapper {$$props.class}" on:click>
 	<div class="input-icon">
 		<slot />
 	</div>
-	<input type="text" bind:value class="input-app" {placeholder} />
+	<select bind:value class="input-app" {placeholder}>
+		{#each items as item}
+			<option value={item.value}>{item.text}</option>
+		{/each}
+	</select>
 </div>
 
 <style lang="scss">

@@ -8,13 +8,13 @@
 	let active_index = 0;
 	let voices: any = [
 		{
-			src: '/voices/voice.mp3'
+			src: '/voices/voice-1.mp3'
 		},
 		{
-			src: '/voices/voice.mp3'
+			src: '/voices/voice-2.mp3'
 		},
 		{
-			src: '/voices/voice.mp3'
+			src: '/voices/voice-3.mp3'
 		}
 	];
 </script>

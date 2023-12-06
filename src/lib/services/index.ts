@@ -1,1 +1,1 @@
-// export { default as HomeService } from "./home";
+export { default as HomeService } from "./home";
