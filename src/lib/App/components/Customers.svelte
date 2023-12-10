@@ -6,6 +6,7 @@
 
 	export let items: any = [1, 2, 3];
 	let active_index = 0;
+	let elements: any = [];
 	let voices: any = [
 		{
 			src: '/voices/voice-1.mp3'
@@ -52,6 +53,13 @@
 			src: '/images/image-8.jpg'
 		}
 	];
+	const pauseAll = (index: any) => {
+		elements.map((x: any, j: any) => {
+			if (index !== j) {
+				x.pause();
+			}
+		});
+	};
 </script>
 
 <div class={$$props.class}>
@@ -84,7 +92,11 @@
 						<div class="customer-card">
 							{#each { length: 3 } as item, index}
 								{#if voices.length > index + voice_slider_index * 3}
-									<Voice voice={voices[index + voice_slider_index * 3].src} />
+									<Voice
+										on:pauseAll={() => pauseAll(index + voice_slider_index * 3)}
+										voice={voices[index + voice_slider_index * 3].src}
+										bind:this={elements[index + voice_slider_index * 3]}
+									/>
 								{/if}
 							{/each}
 						</div>
