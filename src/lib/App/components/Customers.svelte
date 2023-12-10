@@ -15,6 +15,41 @@
 		},
 		{
 			src: '/voices/voice-3.mp3'
+		},
+		{
+			src: '/voices/voice-4.mp3'
+		},
+		{
+			src: '/voices/voice-5.mp3'
+		},
+		{
+			src: '/voices/voice-6.mp3'
+		}
+	];
+	let images: any = [
+		{
+			src: '/images/image-1.jpg'
+		},
+		{
+			src: '/images/image-2.jpg'
+		},
+		{
+			src: '/images/image-3.jpg'
+		},
+		{
+			src: '/images/image-4.jpg'
+		},
+		{
+			src: '/images/image-5.jpg'
+		},
+		{
+			src: '/images/image-6.jpg'
+		},
+		{
+			src: '/images/image-7.jpg'
+		},
+		{
+			src: '/images/image-8.jpg'
 		}
 	];
 </script>
@@ -32,42 +67,29 @@
 	<div class="grid grid-cols-1 sm:grid-cols-2 items-center gap-10 sm:gap-[150px] mt-14 relative">
 		<div class="">
 			<Swiper pagination>
-				<swiper-slide>
-					<CustomerComment />
-				</swiper-slide>
-				<swiper-slide>
-					<CustomerComment />
-				</swiper-slide>
-				<swiper-slide>
-					<CustomerComment />
-				</swiper-slide>
+				{#each images as image}
+					<swiper-slide>
+						<div class="h-[200px] mb-10 mt-10 flex items-center justify-center">
+							<img src={image.src} class="h-full w-auto" alt="" />
+						</div>
+					</swiper-slide>
+				{/each}
 			</Swiper>
 		</div>
 		<div class="hidden sm:block border-between" />
 		<div class="">
 			<Swiper pagination>
-				<swiper-slide>
-					<div class="customer-card">
-						{#each voices as voice}
-							<Voice voice={voice.src} />
-						{/each}
-					</div>
-				</swiper-slide>
-				<swiper-slide>
-					<div class="customer-card">
-						{#each voices as voice}
-							<Voice voice={voice.src} />
-						{/each}
-					</div>
-				</swiper-slide>
-				<swiper-slide>
-					<div class="customer-card">
-						{#each voices as voice}
-							<Voice voice={voice.src} />
-							<!-- <audio controls class="w-full"> <source src={voice.src} type="" /></audio> -->
-						{/each}
-					</div>
-				</swiper-slide>
+				{#each { length: voices.length / 3 } as item, voice_slider_index}
+					<swiper-slide>
+						<div class="customer-card">
+							{#each { length: 3 } as item, index}
+								{#if voices.length > index + voice_slider_index * 3}
+									<Voice voice={voices[index + voice_slider_index * 3].src} />
+								{/if}
+							{/each}
+						</div>
+					</swiper-slide>
+				{/each}
 			</Swiper>
 		</div>
 	</div>

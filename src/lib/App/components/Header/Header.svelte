@@ -1,4 +1,13 @@
 <script lang="ts">
+	import { goto } from '$app/navigation';
+	import { createEventDispatcher } from 'svelte';
+	const dispatch = createEventDispatcher();
+	const gotoPackage = () => {
+		dispatch('gotoPackage');
+	};
+	const gotoForm = () => {
+		dispatch('gotoForm');
+	};
 </script>
 
 <div class="header">
@@ -19,10 +28,11 @@
 				<div class="flex items-center gap-3 justify-end">
 					<button
 						class="border border-white text-white h-12 w-[170px] rounded-full text-xs sm:text-sm"
-						>مشاهده پکیج</button
+						on:click={gotoPackage}>مشاهده پکیج</button
 					>
-					<button class="bg-white text-primary h-12 w-[170px] rounded-full text-xs sm:text-sm"
-						>دریافت نوبت مشاوره</button
+					<button
+						class="bg-white text-primary h-12 w-[170px] rounded-full text-xs sm:text-sm"
+						on:click={gotoForm}>دریافت نوبت مشاوره</button
 					>
 				</div>
 			</div>
@@ -41,7 +51,7 @@
 			}
 			img {
 				@apply absolute top-0 right-0 w-full;
-				@media screen and (min-width:640px) {
+				@media screen and (min-width: 640px) {
 					@apply bottom-0;
 					top: unset;
 				}

@@ -75,7 +75,6 @@
 					</div>
 				{/each}
 			</div>
-			<button class="package-submit text-[#7F84FF]"> انتخاب </button>
 		</div>
 		<div class="package package-{1}">
 			<div class="package-number">{1}</div>
@@ -107,7 +106,6 @@
 					</div>
 				{/each}
 			</div>
-			<button class="package-submit text-[#FE7D30]"> انتخاب </button>
 		</div>
 		<div class="package package-{3}">
 			<div class="package-number">{3}</div>
@@ -139,7 +137,6 @@
 					</div>
 				{/each}
 			</div>
-			<button class="package-submit text-[#3BCFC6]"> انتخاب </button>
 		</div>
 	</div>
 </div>

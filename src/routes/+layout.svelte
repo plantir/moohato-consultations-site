@@ -1,5 +1,4 @@
 <script>
-	import Header from '@app/components/Header/Header.svelte';
 	import './index.scss';
 	import { onMount } from 'svelte';
 	let loading = true;
@@ -7,7 +6,6 @@
 </script>
 
 <div class="application">
-	<Header />
 	<div class="">
 		<slot />
 	</div>

@@ -50,9 +50,9 @@
 	<div class="packages">
 		<div class="package package-{2}">
 			<div class="package-number">{2}</div>
-			<div class="package-name">پکیج شمیم</div>
+			<div class="package-name">پکیج درمان زودانزالی</div>
 			<div class="package-price">
-				50,000
+				1,880,000
 				<span> /تومان </span>
 			</div>
 			<div class="border-t border-white" />
@@ -78,13 +78,12 @@
 					</div>
 				{/each}
 			</div>
-			<button class="package-submit text-[#7F84FF]"> انتخاب </button>
 		</div>
 		<div class="package package-{1}">
 			<div class="package-number">{1}</div>
-			<div class="package-name">پکیج شمیم</div>
+			<div class="package-name">پکیج زودانزالی و عدم نعوظ</div>
 			<div class="package-price">
-				100,000
+				2,480,000
 				<span> /تومان </span>
 			</div>
 			<div class="border-t border-white" />
@@ -110,13 +109,12 @@
 					</div>
 				{/each}
 			</div>
-			<button class="package-submit text-[#FE7D30]"> انتخاب </button>
 		</div>
 		<div class="package package-{3}">
 			<div class="package-number">{3}</div>
-			<div class="package-name">پکیج شمیم</div>
+			<div class="package-name">پکیج افزایش سایز</div>
 			<div class="package-price">
-				20,000
+				960,000
 				<span> /تومان </span>
 			</div>
 			<div class="border-t border-white" />
@@ -142,7 +140,6 @@
 					</div>
 				{/each}
 			</div>
-			<button class="package-submit text-[#3BCFC6]"> انتخاب </button>
 		</div>
 	</div>
 </div>
@@ -177,10 +174,10 @@
 				}
 			}
 			&-name {
-				@apply text-xl sm:text-[26px] text-center text-white;
+				@apply text-xl sm:text-[22px] text-center text-white mb-4 mt-4;
 			}
 			&-price {
-				@apply text-[30px] sm:text-[49px] text-white font-bold text-center;
+				@apply text-[30px] sm:text-[40px] text-white font-bold text-center;
 				span {
 					@apply font-medium text-sm sm:-mr-3;
 				}
