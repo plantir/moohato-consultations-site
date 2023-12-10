@@ -6,9 +6,10 @@
 	import DoubleCheckSvgStroke from './Svg/DoubleCheckSvgStroke.svelte';
 	import IncomingCallSvgStroke from './Svg/IncomingCallSvgStroke.svelte';
 	import UserOutlineSvgStroke from './Svg/UserOutlineSvgStroke.svelte';
+	import Loading from './loading.svelte';
 	let form: any = {};
 	let message: any = null;
-	let loading_btn = false;
+	let loading_btn = true;
 	const sendForm = async () => {
 		loading_btn = true;
 		if (form.name && form.mobile) {
@@ -45,7 +46,7 @@
 	};
 </script>
 
-<div class="relative sm:px-20">
+<div class="relative sm:mx-20">
 	<div class="shadow-box" />
 	<div class="profile-box {$$props.class}">
 		<div class="hidden sm:block pr-12">
@@ -78,6 +79,11 @@
 			</div>
 		</div>
 	</div>
+	{#if loading_btn}
+		<div class="absolute top-0 right-0 bg-black/10 w-full h-full rounded-[30px] sm:rounded-[58px]">
+			<Loading />
+		</div>
+	{/if}
 </div>
 
 <style lang="scss">
