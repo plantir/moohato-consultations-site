@@ -1,5 +1,14 @@
 <script lang="ts">
 	export let items: any = [];
+	const orderClass = (index: any) => {
+		if (index == 0) {
+			return 'sm:order-2';
+		} else if (index == 1) {
+			return 'sm:order-1';
+		} else {
+			return 'sm:order-3';
+		}
+	};
 </script>
 
 <div class="sm:px-20 {$$props.class}">
@@ -48,99 +57,42 @@
 		دوچندان کند.
 	</div>
 	<div class="packages">
-		<div class="package package-{2}">
-			<div class="package-number">{2}</div>
-			<div class="package-name">پکیج درمان زودانزالی</div>
-			<div class="package-price">
-				1,880,000
-				<span> /تومان </span>
-			</div>
-			<div class="border-t border-white" />
-			<div class="package-features">
-				{#each { length: 3 } as index}
+		{#each items as item, index}
+			<div class="package package-{index + 1} {orderClass(index)}">
+				<div class="package-number">{index + 1}</div>
+				<div class="package-name">{item.title}</div>
+				<div class="package-price">
+					{item.price}
+					<span> /تومان </span>
+				</div>
+				<div class="border-t border-white" />
+				<div class="package-features">
+					{#each item.features as feature}
+						<div class="feature">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="21"
+								height="20"
+								viewBox="0 0 21 20"
+								fill="none"
+							>
+								<path
+									d="M4.61816 9.92517L8.719 14.026L16.9207 5.82434"
+									stroke="#FFF0A1"
+									stroke-width="2.4605"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+								/>
+							</svg>
+							{feature}
+						</div>
+					{/each}
 					<div class="feature">
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							width="21"
-							height="20"
-							viewBox="0 0 21 20"
-							fill="none"
-						>
-							<path
-								d="M4.61816 9.92517L8.719 14.026L16.9207 5.82434"
-								stroke="#FFF0A1"
-								stroke-width="2.4605"
-								stroke-linecap="round"
-								stroke-linejoin="round"
-							/>
-						</svg>
-						شامل ۵ بسته ویژه موهاتو
+						{item.description}
 					</div>
-				{/each}
+				</div>
 			</div>
-		</div>
-		<div class="package package-{1}">
-			<div class="package-number">{1}</div>
-			<div class="package-name">پکیج زودانزالی و عدم نعوظ</div>
-			<div class="package-price">
-				2,480,000
-				<span> /تومان </span>
-			</div>
-			<div class="border-t border-white" />
-			<div class="package-features">
-				{#each { length: 4 } as index}
-					<div class="feature">
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							width="21"
-							height="20"
-							viewBox="0 0 21 20"
-							fill="none"
-						>
-							<path
-								d="M4.61816 9.92517L8.719 14.026L16.9207 5.82434"
-								stroke="#FFF0A1"
-								stroke-width="2.4605"
-								stroke-linecap="round"
-								stroke-linejoin="round"
-							/>
-						</svg>
-						شامل ۵ بسته ویژه موهاتو
-					</div>
-				{/each}
-			</div>
-		</div>
-		<div class="package package-{3}">
-			<div class="package-number">{3}</div>
-			<div class="package-name">پکیج افزایش سایز</div>
-			<div class="package-price">
-				960,000
-				<span> /تومان </span>
-			</div>
-			<div class="border-t border-white" />
-			<div class="package-features">
-				{#each { length: 3 } as index}
-					<div class="feature">
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							width="21"
-							height="20"
-							viewBox="0 0 21 20"
-							fill="none"
-						>
-							<path
-								d="M4.61816 9.92517L8.719 14.026L16.9207 5.82434"
-								stroke="#FFF0A1"
-								stroke-width="2.4605"
-								stroke-linecap="round"
-								stroke-linejoin="round"
-							/>
-						</svg>
-						شامل ۵ بسته ویژه موهاتو
-					</div>
-				{/each}
-			</div>
-		</div>
+		{/each}
 	</div>
 </div>
 
@@ -155,19 +107,19 @@
 				border-radius: 16.364px;
 				filter: blur(9.819999694824219px);
 			}
-			&:first-child {
+			&.package-2 {
 				background: linear-gradient(160deg, #77ceff 21.92%, #ff7cbb 103.71%);
 				&::before {
 					background: rgba(184, 98, 255, 0.4);
 				}
 			}
-			&:nth-child(2) {
+			&.package-1 {
 				background: linear-gradient(160deg, #ff9c7a 21.92%, #ff7fb3 103.7%, #fe7325 103.71%);
 				&::before {
 					background: rgba(255, 130, 175, 0.4);
 				}
 			}
-			&:last-child {
+			&.package-3 {
 				background: linear-gradient(160deg, #3acec5 21.92%, #70e3aa 103.71%);
 				&::before {
 					background: rgba(112, 227, 170, 0.4);

@@ -8,6 +8,7 @@
 	import ProfileBox from '@app/components/ProfileBox.svelte';
 	import ProfileBoxSection from '@app/components/ProfileBoxSection.svelte';
 	import SectionBg from '@app/components/SectionBg.svelte';
+	export let data: any;
 	const gotoId = (id: string) => {
 		const anchor: any = document.getElementById(id);
 		const { top } = anchor.getBoundingClientRect();
@@ -18,7 +19,7 @@
 	};
 </script>
 
-<Header on:gotoPackage={() => gotoId('packages')} on:gotoForm={() => gotoId('form')} />
+<Header on:gotoPackage={() => gotoId('hairPackages')} on:gotoForm={() => gotoId('form')} />
 <div class="container" id="form">
 	<ProfileBox class="mt-10 sm:-mt-[120px]" />
 </div>
@@ -152,8 +153,8 @@
 			</defs>
 		</svg>
 	</div>
-	<div class="container pb-10 sm:pb-[210px]" id="packages">
-		<Packages class="mt-10 sm:mt-[180px]" />
+	<div class="container pb-10 sm:pb-[210px]" id="hairPackages">
+		<Packages class="mt-10 sm:mt-[180px]" items={data.hair_packages} />
 	</div>
 </div>
 <div class="relative">
@@ -241,6 +242,6 @@
 		</svg>
 	</div>
 	<div class="container mb-10 sm:mb-[210px]" id="sexualPackages">
-		<PackagesSection class="mt-10 sm:mt-[180px]" />
+		<PackagesSection class="mt-10 sm:mt-[180px]" items={data.sexual_packages} />
 	</div>
 </div>

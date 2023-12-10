@@ -3,25 +3,16 @@
 	import Button from './Common/Button.svelte';
 	import FileInput from './Common/FileInput.svelte';
 	import Input from './Common/Input.svelte';
-	import Select from './Common/Select.svelte';
 	import DoubleCheckSvgStroke from './Svg/DoubleCheckSvgStroke.svelte';
 	import FileSvgStroke from './Svg/FileSvgStroke.svelte';
 	import IncomingCallSvgStroke from './Svg/IncomingCallSvgStroke.svelte';
 	import UploadSvgStroke from './Svg/UploadSvgStroke.svelte';
 	import UserOutlineSvgStroke from './Svg/UserOutlineSvgStroke.svelte';
-	let form: any = {};
+	let form: any = {
+		category: 'hair'
+	};
 	let message: any = null;
 	let loading_btn = false;
-	let category_items = [
-		{
-			text: 'مراقبت مو',
-			value: 'hair'
-		},
-		{
-			text: 'موارد جنسی',
-			value: 'sexual'
-		}
-	];
 	const sendForm = async () => {
 		loading_btn = true;
 		if (form.name && form.mobile) {
@@ -55,13 +46,11 @@
 	<div class="profile-box {$$props.class}">
 		<div class="hidden sm:block pr-12">
 			<div class="bg-[#0B5ACC21] pb-4 flex flex-col gap-3 rounded-[45px]">
-				<img src="./images/doctor.png" class="rounded-[45px]" alt="" />
+				<div class="h-[200px] w-full bg-gray-400 rounded-[45px] flex justify-center items-center">
+					<img src="./images/form-image.jpg" class="w-[180px] rounded-[45px] rotate-90" alt="" />
+				</div>
 				<div class="flex flex-col items-center justify-center">
-					<div class="flex items-center text-xl font-medium text-primary gap-1.5">
-						<FileSvgStroke class="stroke-primary" />
-						دکتر علی راشدی
-					</div>
-					<div class="text-xs text-gray-500">متخصص پوست مو زیبایی</div>
+					<div class=" text-gray-900">نمونه ارسال عکس</div>
 				</div>
 			</div>
 		</div>
@@ -86,7 +75,6 @@
 				<Input bind:value={form.mobile} placeholder="شماره تماس">
 					<IncomingCallSvgStroke class="stroke-[#130F26]" />
 				</Input>
-				<Select bind:value={form.category} items={category_items} />
 				<div class="flex items-center justify-between gap-3">
 					<!-- <FileInput bind:value={form.file} placeholder="آپلود عکس">
 						<div class="bg-primary/20 w-10 h-10 rounded-2xl flex items-center justify-center">

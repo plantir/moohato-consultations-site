@@ -2,23 +2,14 @@
 	import { HomeService } from '$lib/services';
 	import Button from './Common/Button.svelte';
 	import Input from './Common/Input.svelte';
-	import Select from './Common/Select.svelte';
 	import DoubleCheckSvgStroke from './Svg/DoubleCheckSvgStroke.svelte';
 	import IncomingCallSvgStroke from './Svg/IncomingCallSvgStroke.svelte';
 	import UserOutlineSvgStroke from './Svg/UserOutlineSvgStroke.svelte';
-	let form: any = {};
+	let form: any = {
+		category: 'sexual'
+	};
 	let message: any = null;
 	let loading_btn = false;
-	let category_items = [
-		{
-			text: 'مراقبت مو',
-			value: 'hair'
-		},
-		{
-			text: 'موارد جنسی',
-			value: 'sexual'
-		}
-	];
 	const sendForm = async () => {
 		loading_btn = true;
 		if (form.name && form.mobile) {
@@ -79,7 +70,6 @@
 				<Input bind:value={form.mobile} placeholder="شماره تماس">
 					<IncomingCallSvgStroke class="stroke-black" />
 				</Input>
-				<Select bind:value={form.category} items={category_items} />
 				<Button type="secondary" on:click={sendForm} loading={loading_btn}>ارسال</Button>
 			</div>
 		</div>
