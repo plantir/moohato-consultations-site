@@ -1,10 +1,11 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
+	import { onMount, createEventDispatcher } from 'svelte';
 	import WaveSurfer from 'wavesurfer.js';
 	export let voice: any;
 	export let playing = false;
 	export let deactiveBg = 'bg-primary/50';
 	export let activeBg = 'bg-primary';
+	const dispatch = createEventDispatcher();
 	let random = Math.round(Math.random() * 1000);
 	let wavesurfer: any = {};
 	let audio: any;
@@ -30,6 +31,7 @@
 			time = `${minute}:${secound}`;
 		});
 		wavesurfer.on('play', () => {
+			dispatch('pauseAll');
 			playing = true;
 		});
 
@@ -50,11 +52,16 @@
 			time = `${minute}:${secound}`;
 		});
 	});
-	function play() {
+	export function play() {
 		if (playing) {
 			wavesurfer.pause();
 		} else {
 			wavesurfer.play();
+		}
+	}
+	export function pause() {
+		if (playing) {
+			wavesurfer.pause();
 		}
 	}
 </script>
