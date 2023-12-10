@@ -11,12 +11,12 @@
 </script>
 
 <div class="header">
-	<img src="/images/background.png" class="w-full hidden sm:block" alt="" />
-	<img src="/images/background-mobile.png" class="w-full sm:hidden" alt="" />
+	<img src="./images/background.png" class="w-full hidden sm:block" alt="" />
+	<img src="./images/background-mobile.png" class="w-full sm:hidden" alt="" />
 	<div class="container absolute top-1/2 -translate-y-1/2 right-1/2 translate-x-1/2">
 		<div class="relative flex flex-col sm:flex-row sm:gap-5 sm:pt-[70px]">
 			<div class="image-wrapper">
-				<img src="/images/doctor_image.png" alt="" />
+				<img src="./images/doctor_image.png" alt="" />
 			</div>
 			<div class="text-white sm:mb-16">
 				<div class="text-lg sm:text-2xl tracking-tight mb-3">درمان ریزش مو</div>

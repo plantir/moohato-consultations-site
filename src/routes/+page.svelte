@@ -161,7 +161,7 @@
 	<div class="container absolute top-1/2 -translate-y-1/2 right-1/2 translate-x-1/2">
 		<div class="relative flex flex-col sm:flex-row sm:gap-16 sm:pb-[70px]">
 			<div class="image-wrapper basis-[125px] sm:basis-[320px] flex-grow-0 flex-shrink-0">
-				<img src="/images/section-2.png" class="w-[125px] sm:w-[320px]" alt="" />
+				<img src="./images/section-2.png" class="w-[125px] sm:w-[320px]" alt="" />
 			</div>
 			<div class="text-white self-end sm:mb-16">
 				<div class="text-xl sm:text-2xl tracking-tight mb-3">

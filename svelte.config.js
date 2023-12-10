@@ -13,7 +13,7 @@ const config = {
 		// See https://kit.svelte.dev/docs/adapters for more information about adapters.
 		adapter: adapterNode(),
 		paths: {
-			base: process.env.NODE_ENV == 'production' ? '/consultation' : ''
+			base: process.env.NODE_ENV == 'production' ? '/consultation' : '/consultation'
 		},
 		alias: {
 			'@ubeac/svelte': path.resolve('./src/lib/@ubeac'),

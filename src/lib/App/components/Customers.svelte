@@ -8,48 +8,48 @@
 	let active_index = 0;
 	let voices: any = [
 		{
-			src: '/voices/voice-1.mp3'
+			src: './voices/voice-1.mp3'
 		},
 		{
-			src: '/voices/voice-2.mp3'
+			src: './voices/voice-2.mp3'
 		},
 		{
-			src: '/voices/voice-3.mp3'
+			src: './voices/voice-3.mp3'
 		},
 		{
-			src: '/voices/voice-4.mp3'
+			src: './voices/voice-4.mp3'
 		},
 		{
-			src: '/voices/voice-5.mp3'
+			src: './voices/voice-5.mp3'
 		},
 		{
-			src: '/voices/voice-6.mp3'
+			src: './voices/voice-6.mp3'
 		}
 	];
 	let images: any = [
 		{
-			src: '/images/image-1.jpg'
+			src: './images/image-1.jpg'
 		},
 		{
-			src: '/images/image-2.jpg'
+			src: './images/image-2.jpg'
 		},
 		{
-			src: '/images/image-3.jpg'
+			src: './images/image-3.jpg'
 		},
 		{
-			src: '/images/image-4.jpg'
+			src: './images/image-4.jpg'
 		},
 		{
-			src: '/images/image-5.jpg'
+			src: './images/image-5.jpg'
 		},
 		{
-			src: '/images/image-6.jpg'
+			src: './images/image-6.jpg'
 		},
 		{
-			src: '/images/image-7.jpg'
+			src: './images/image-7.jpg'
 		},
 		{
-			src: '/images/image-8.jpg'
+			src: './images/image-8.jpg'
 		}
 	];
 </script>

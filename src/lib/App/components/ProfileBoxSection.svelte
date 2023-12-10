@@ -54,7 +54,7 @@
 	<div class="shadow-box" />
 	<div class="profile-box {$$props.class}">
 		<div class="hidden sm:block pr-12">
-			<img src="/images/profile-section2.png" alt="" />
+			<img src="./images/profile-section2.png" alt="" />
 		</div>
 		<div>
 			<div class="pr-8 border-b border-gray-200 pb-0.5">

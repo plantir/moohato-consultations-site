@@ -5,9 +5,11 @@
 <div class="flex-1 customer-card">
 	<div class="flex gap-2">
 		<div class="">
-			<div class="absolute top-[-32px] w-[46pxpx] h-[46pxpx] sm:top-[-35px] sm:w-[70px] sm:h-[70px] bg-white rounded-full p-1 sm:p-2 shadow-xl">
+			<div
+				class="absolute top-[-32px] w-[46pxpx] h-[46pxpx] sm:top-[-35px] sm:w-[70px] sm:h-[70px] bg-white rounded-full p-1 sm:p-2 shadow-xl"
+			>
 				<img
-					src="/images/customer-profile.png"
+					src="./images/customer-profile.png"
 					class="shadow-md rounded-full w-full object-cover"
 					alt=""
 				/>
@@ -91,8 +93,10 @@
 				</div>
 			</div>
 		</div>
-		<div class="realtive flex flex-col items-center justify-center basis-[110px] sm:basis-[170px] flex-grow-0 flex-shrink-0">
-			<img src="/images/customer-image.png" alt="" />
+		<div
+			class="realtive flex flex-col items-center justify-center basis-[110px] sm:basis-[170px] flex-grow-0 flex-shrink-0"
+		>
+			<img src="./images/customer-image.png" alt="" />
 			<button
 				class="{section
 					? 'bg-primary'

@@ -55,7 +55,7 @@
 	<div class="profile-box {$$props.class}">
 		<div class="hidden sm:block pr-12">
 			<div class="bg-[#0B5ACC21] pb-4 flex flex-col gap-3 rounded-[45px]">
-				<img src="/images/doctor.png" class="rounded-[45px]" alt="" />
+				<img src="./images/doctor.png" class="rounded-[45px]" alt="" />
 				<div class="flex flex-col items-center justify-center">
 					<div class="flex items-center text-xl font-medium text-primary gap-1.5">
 						<FileSvgStroke class="stroke-primary" />
