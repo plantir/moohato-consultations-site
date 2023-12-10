@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { persianToEnglish } from '$lib/helpers/persianNumber';
 	import { HomeService } from '$lib/services';
 	import Button from './Common/Button.svelte';
 	import FileInput from './Common/FileInput.svelte';
@@ -8,16 +9,20 @@
 	import IncomingCallSvgStroke from './Svg/IncomingCallSvgStroke.svelte';
 	import UploadSvgStroke from './Svg/UploadSvgStroke.svelte';
 	import UserOutlineSvgStroke from './Svg/UserOutlineSvgStroke.svelte';
-	let form: any = {
-		category: 'hair'
-	};
+	import Loading from './loading.svelte';
+	let form: any = {};
 	let message: any = null;
 	let loading_btn = false;
 	const sendForm = async () => {
 		loading_btn = true;
 		if (form.name && form.mobile) {
 			try {
-				const res = await HomeService.sendForm(form);
+				let data = {
+					name: form.name,
+					mobile: persianToEnglish(form.mobile),
+					category: 'hair'
+				};
+				const res = await HomeService.sendForm(data);
 				message = {
 					type: 'success',
 					message: 'درخواست شما با موفقیت ثبت شد'
@@ -41,7 +46,7 @@
 	};
 </script>
 
-<div class="relative sm:px-20">
+<div class="relative sm:mx-20">
 	<div class="shadow-box" />
 	<div class="profile-box {$$props.class}">
 		<div class="hidden sm:block pr-12">
@@ -63,7 +68,7 @@
 				<div class="text-sm text-gray-500 mb-1.5 -mt-1">اطلاعات خود را جهت مشاوره تکمیل کنید</div>
 				<div class="text-xs text-gray-400">در وارد کردن اطلاعات خود دقت نمیایید</div>
 			</div>
-			<div class="flex flex-col gap-4 pt-4">
+			<div class="flex flex-col gap-4 pt-4 relative">
 				{#if message}
 					<div class={message.type == 'error' ? 'text-error' : 'text-success'}>
 						{message.message}
@@ -86,6 +91,11 @@
 			</div>
 		</div>
 	</div>
+	{#if loading_btn}
+		<div class="absolute top-0 right-0 bg-black/10 w-full h-full rounded-[30px] sm:rounded-[58px]">
+			<Loading />
+		</div>
+	{/if}
 </div>
 
 <style lang="scss">

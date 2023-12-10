@@ -1,20 +1,24 @@
 <script lang="ts">
+	import { persianToEnglish } from '$lib/helpers/persianNumber';
 	import { HomeService } from '$lib/services';
 	import Button from './Common/Button.svelte';
 	import Input from './Common/Input.svelte';
 	import DoubleCheckSvgStroke from './Svg/DoubleCheckSvgStroke.svelte';
 	import IncomingCallSvgStroke from './Svg/IncomingCallSvgStroke.svelte';
 	import UserOutlineSvgStroke from './Svg/UserOutlineSvgStroke.svelte';
-	let form: any = {
-		category: 'sexual'
-	};
+	let form: any = {};
 	let message: any = null;
 	let loading_btn = false;
 	const sendForm = async () => {
 		loading_btn = true;
 		if (form.name && form.mobile) {
 			try {
-				const res = await HomeService.sendForm(form);
+				let data = {
+					name: form.name,
+					mobile: persianToEnglish(form.mobile),
+					category: 'sexual'
+				};
+				const res = await HomeService.sendForm(data);
 				message = {
 					type: 'success',
 					message: 'درخواست شما با موفقیت ثبت شد'
