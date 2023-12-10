@@ -1,14 +1,25 @@
 <script lang="ts">
+	import { goto } from '$app/navigation';
 	import Customers from '@app/components/Customers.svelte';
 	import CustomersSection from '@app/components/CustomersSection.svelte';
+	import Header from '@app/components/Header/Header.svelte';
 	import Packages from '@app/components/Packages.svelte';
 	import PackagesSection from '@app/components/PackagesSection.svelte';
 	import ProfileBox from '@app/components/ProfileBox.svelte';
 	import ProfileBoxSection from '@app/components/ProfileBoxSection.svelte';
 	import SectionBg from '@app/components/SectionBg.svelte';
+	const gotoId = (id: string) => {
+		const anchor: any = document.getElementById(id);
+		const { top } = anchor.getBoundingClientRect();
+		window.scrollTo({
+			top: window.scrollY + top - 100,
+			behavior: 'smooth'
+		});
+	};
 </script>
 
-<div class="container">
+<Header on:gotoPackage={() => gotoId('packages')} on:gotoForm={() => gotoId('form')} />
+<div class="container" id="form">
 	<ProfileBox class="mt-10 sm:-mt-[120px]" />
 </div>
 <div class="bg-[#EEEEF8B2] pt-10 pb-[70px] mt-[140px] relative">
@@ -141,7 +152,7 @@
 			</defs>
 		</svg>
 	</div>
-	<div class="container pb-10 sm:pb-[210px]">
+	<div class="container pb-10 sm:pb-[210px]" id="packages">
 		<Packages class="mt-10 sm:mt-[180px]" />
 	</div>
 </div>
@@ -153,32 +164,36 @@
 				<img src="/images/section-2.png" class="w-[125px] sm:w-[320px]" alt="" />
 			</div>
 			<div class="text-white self-end sm:mb-16">
-				<div class="text-xl sm:text-2xl tracking-tight mb-3">جلوگیری از ریزش مو</div>
+				<div class="text-xl sm:text-2xl tracking-tight mb-3">
+					درمان مشکلات جنسی ( زود انزالی ، عدم نعوظ ، افزایش سایز )
+				</div>
 				<div class="text-sm text-white text-justify mb-4 sm:mb-[70px]">
-					خوب است بدانید که در بروز ریزش مو شما صد در صد مقصر نیستید و عللی وجود دارند که از اختیار
-					شما خارج هستند. ریزش مو می‌تواند نتیجه وراثت، تغییرات هورمونی، شرایط پزشکی یا بخشی از روند
-					افزایش سن شما باشد. هرکسی ممکن است موهای سر خود را از دست بدهد
+					متاسفانه در ایران به دلیل عدم آگاهی کامل جنسی و وجود درمان های شیمیایی و خطرناک برای درمان
+					مسائل جنسی اکثر آقایان اقدامی برای درمان نمیکنند . در مجموعه ی ما با دریافت مشاوره از
+					متخصصین و محصولات کاملا گیاهی مشکلات جنسی خود را دائمی درمان کنید
 				</div>
 				<div class="flex items-center gap-3 justify-end">
-					<button class="border border-white text-white h-12 flex-1 rounded-full text-xs sm:text-sm"
-						>مشاهده پکیج</button
+					<button
+						class="border border-white text-white h-12 rounded-full text-xs sm:text-sm px-6"
+						on:click={() => gotoId('sexualPackages')}>مشاهده پکیج</button
 					>
-					<button class="bg-white text-[#FF685E] h-12 flex-1 rounded-full text-xs sm:text-sm"
-						>دریافت نوبت مشاوره</button
+					<button
+						class="bg-white text-[#FF685E] h-12 rounded-full text-xs sm:text-sm px-6"
+						on:click={() => gotoId('section2')}>دریافت نوبت مشاوره</button
 					>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
-<div class="container">
+<div class="container" id="section2">
 	<ProfileBoxSection class="mt-10 sm:-mt-[120px]" />
 </div>
-<div class="bg-[#F8EEEEB2] pt-10 pb-[70px] mt-[140px]">
+<!-- <div class="bg-[#F8EEEEB2] pt-10 pb-[70px] mt-[140px]">
 	<div class="container">
 		<CustomersSection />
 	</div>
-</div>
+</div> -->
 <div class="relative">
 	<div class="hidden sm:block absolute -z-10 top-[20px] right-[0px]">
 		<svg
@@ -225,7 +240,7 @@
 			/>
 		</svg>
 	</div>
-	<div class="container mb-10 sm:mb-[210px]">
+	<div class="container mb-10 sm:mb-[210px]" id="sexualPackages">
 		<PackagesSection class="mt-10 sm:mt-[180px]" />
 	</div>
 </div>

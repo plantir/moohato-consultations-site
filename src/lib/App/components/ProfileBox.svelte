@@ -11,6 +11,7 @@
 	import UserOutlineSvgStroke from './Svg/UserOutlineSvgStroke.svelte';
 	let form: any = {};
 	let message: any = null;
+	let loading_btn = false;
 	let category_items = [
 		{
 			text: 'مراقبت مو',
@@ -22,6 +23,7 @@
 		}
 	];
 	const sendForm = async () => {
+		loading_btn = true;
 		if (form.name && form.mobile) {
 			try {
 				const res = await HomeService.sendForm(form);
@@ -41,6 +43,7 @@
 				message: 'لطفا تمامی موارد را کامل کنید'
 			};
 		}
+		loading_btn = false;
 		setTimeout(() => {
 			message = null;
 		}, 5000);
@@ -90,7 +93,7 @@
 							<UploadSvgStroke class="stroke-primary" />
 						</div>
 					</FileInput> -->
-					<Button class="flex-1" on:click={sendForm}>ارسال</Button>
+					<Button class="flex-1" on:click={sendForm} loading={loading_btn}>ارسال</Button>
 				</div>
 			</div>
 		</div>
