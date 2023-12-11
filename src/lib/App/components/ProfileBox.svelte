@@ -20,8 +20,8 @@
 				let data = {
 					name: form.name,
 					mobile: persianToEnglish(form.mobile),
-					age: persianToEnglish(form.age),
-					category: 'hair'
+					category: 'hair',
+					image: form.image
 				};
 				const res = await HomeService.sendForm(data);
 				message = {
@@ -75,12 +75,14 @@
 					<UserOutlineSvgStroke class="stroke-[#130F26]" />
 				</Input>
 				<div class="flex items-center justify-between gap-3">
-					<!-- <FileInput bind:value={form.file} placeholder="آپلود عکس">
+					<FileInput bind:value={form.image} placeholder="آپلود عکس">
 						<div class="bg-primary/20 w-10 h-10 rounded-2xl flex items-center justify-center">
 							<UploadSvgStroke class="stroke-primary" />
 						</div>
-					</FileInput> -->
-					<Button class="flex-1" on:click={sendForm} loading={loading_btn}>ارسال</Button>
+					</FileInput>
+				</div>
+				<div>
+					<Button class="flex-1 h-6" on:click={sendForm} loading={loading_btn}>ارسال</Button>
 				</div>
 			</div>
 		</div>
