@@ -50,12 +50,12 @@
 <div class="relative sm:mx-20">
 	<div class="shadow-box" />
 	<div class="profile-box {$$props.class}">
-		<div class="hidden sm:block pr-12">
+		<div class=" lg:pr-12">
 			<div class="bg-[#0B5ACC21] pb-4 flex flex-col gap-3 rounded-[45px]">
 				<div class="h-[200px] w-full bg-gray-400 rounded-[45px] flex justify-center items-center">
-					<img src="./images/form-image.jpg" class="w-[180px] rounded-[45px] rotate-90" alt="" />
+					<img src="./images/form-image.jpg" class=" h-full max-h-full" alt="" />
 				</div>
-				<div class="flex flex-col items-center justify-center">
+				<div class="flex mt-2 flex-col items-center justify-center">
 					<div class=" text-gray-900">نمونه ارسال عکس</div>
 				</div>
 			</div>
@@ -82,7 +82,7 @@
 					<IncomingCallSvgStroke class="stroke-[#130F26]" />
 				</Input>
 				<div class="flex items-center justify-between gap-3">
-					<FileInput bind:value={form.image} placeholder="آپلود عکس">
+					<FileInput bind:value={form.image} placeholder="آپلود عکس از کف سر">
 						<div class="bg-primary/20 w-10 h-10 rounded-2xl flex items-center justify-center">
 							<UploadSvgStroke class="stroke-primary" />
 						</div>
@@ -103,7 +103,7 @@
 
 <style lang="scss">
 	.profile-box {
-		@apply bg-white p-4 sm:p-9 rounded-[30px] sm:rounded-[58px] grid sm:grid-cols-2 gap-16 relative;
+		@apply bg-white p-4 sm:p-9 rounded-[30px] sm:rounded-[58px] grid md:grid-cols-2 gap-16 relative;
 
 		> div {
 			position: relative;
