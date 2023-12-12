@@ -1,4 +1,5 @@
 <script>
+	import AppToast from '@app/components/layout/AppToast.svelte';
 	import './index.scss';
 	import { onMount } from 'svelte';
 	let loading = true;
@@ -37,6 +38,8 @@
 		</div>
 	</div>
 </div>
+
+<AppToast />
 
 <style lang="scss">
 	.application {
