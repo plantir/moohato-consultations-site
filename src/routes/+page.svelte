@@ -153,7 +153,7 @@
 	<div class="container pb-10 sm:pb-[210px]" id="hairPackages">
 		<Packages class="mt-10 sm:mt-[180px]" items={data.hair_packages} />
 	</div>
-</div> -->
+</div>
 <!-- <div class="relative">
 	<SectionBg />
 	<div class="container absolute top-1/2 -translate-y-1/2 right-1/2 translate-x-1/2">
@@ -183,8 +183,8 @@
 			</div>
 		</div>
 	</div>
-</div>
-<div class="container" id="section2">
+</div> -->
+<!-- <div class="container" id="section2">
 	<ProfileBoxSection class="mt-10 sm:-mt-[120px]" />
 </div> -->
 <!-- <div class="bg-[#F8EEEEB2] pt-10 pb-[70px] mt-[140px]">
