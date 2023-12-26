@@ -26,10 +26,10 @@
 		<div class="text-center">
 			<div class="flex justify-center">
 				<a href="https://enamad.ir/">
-					<img class="w-20 h-20 rounded-xl" src="/images/e-namad.png" alt="" />
+					<img class="w-20 h-20 rounded-xl" src="./images/e-namad.png" alt="" />
 				</a>
 				<a href="https://www.fda.gov.ir//">
-					<img class="w-20 h-20 mr-4 rounded-xl" src="/images/sib.jpg" alt="" />
+					<img class="w-20 h-20 mr-4 rounded-xl" src="./images/sib.jpg" alt="" />
 				</a>
 			</div>
 			<div class="text-white text-lg font-medium mt-2">
