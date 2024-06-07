@@ -20,10 +20,7 @@
 </script>
 
 <Header on:gotoPackage={() => gotoId('hairPackages')} on:gotoForm={() => gotoId('form')} />
-<div class="container" id="form">
-	<ProfileBox class="mt-10 sm:-mt-[120px]" />
-</div>
-<div class="bg-[#EEEEF8B2] pt-10 pb-[70px] mt-[140px] relative">
+<div class="bg-[#EEEEF8B2] pt-10 pb-[70px] mt-[70px] relative">
 	<div class="hidden sm:block absolute -z-10 -top-[330px] left-[88px]">
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
@@ -70,11 +67,11 @@
 			/>
 		</svg>
 	</div>
-	<div class="container">
+	<div class="container" id="hairPackages">
 		<Customers class="" />
 	</div>
 </div>
-<div class="relative">
+<!-- <div class="relative">
 	<div class="hidden sm:block absolute -z-10 top-[110px] left-[40px]">
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
@@ -156,8 +153,8 @@
 	<div class="container pb-10 sm:pb-[210px]" id="hairPackages">
 		<Packages class="mt-10 sm:mt-[180px]" items={data.hair_packages} />
 	</div>
-</div>
-<div class="relative">
+</div> -->
+<!-- <div class="relative">
 	<SectionBg />
 	<div class="container absolute top-1/2 -translate-y-1/2 right-1/2 translate-x-1/2">
 		<div class="relative flex flex-col sm:flex-row sm:gap-16 sm:pb-[70px]">
@@ -189,13 +186,13 @@
 </div>
 <div class="container" id="section2">
 	<ProfileBoxSection class="mt-10 sm:-mt-[120px]" />
-</div>
+</div> -->
 <!-- <div class="bg-[#F8EEEEB2] pt-10 pb-[70px] mt-[140px]">
 	<div class="container">
 		<CustomersSection />
 	</div>
 </div> -->
-<div class="relative">
+<!-- <div class="relative">
 	<div class="hidden sm:block absolute -z-10 top-[20px] right-[0px]">
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
@@ -244,4 +241,4 @@
 	<div class="container mb-10 sm:mb-[210px]" id="sexualPackages">
 		<PackagesSection class="mt-10 sm:mt-[180px]" items={data.sexual_packages} />
 	</div>
-</div>
+</div> -->
