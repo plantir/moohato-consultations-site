@@ -113,7 +113,7 @@
 
 <style lang="scss">
 	.profile-box {
-		@apply bg-white p-4 sm:p-9 rounded-[30px] sm:rounded-[58px] grid md:grid-cols-2 gap-16 relative;
+		@apply bg-white p-4 sm:p-9 rounded-[30px] sm:rounded-[58px]  gap-16 relative;
 
 		> div {
 			position: relative;
