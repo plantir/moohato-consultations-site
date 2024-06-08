@@ -1,45 +1,38 @@
-import { writable } from "svelte/store";
+import { writable } from 'svelte/store';
 
 export type ToastItem = {
-  id?: string;
-  type: "danger" | "warning" | "primary" | "success";
-  icon?: string;
-  actions: any[];
-  title: string;
-  description: string;
-  duration?: number;
+	id?: number;
+	type?: 'error' | 'warning' | 'primary' | 'success' | 'info';
+	text?: string;
+	duration?: number;
 };
 
 function createToasts() {
-  const { set, update, subscribe } = writable<ToastItem[]>([]);
+	const { set, update, subscribe } = writable<ToastItem[]>([]);
 
-  function addToast(item: Partial<ToastItem>) {
-    const id = `${Math.random()}`;
+	function addToast(item: Partial<ToastItem>) {
+		const id = new Date().getTime();
 
-    setTimeout(() => {
-      update((toasts) => toasts.filter((toast) => toast.id !== id));
-    }, item.duration ?? 3000);
+		setTimeout(() => {
+			update((toasts) => toasts.filter((toast) => toast.id !== id));
+		}, item.duration ?? 10000);
 
-    update((toasts) => {
-      return [
-        ...toasts,
-        {
-          id,
-          title: item.title ?? "",
-          description: item.description ?? "",
-          type: item.type ?? "primary",
-          icon: item.icon ?? undefined,
-          duration: item.duration ?? 3000,
-          actions: item.actions ?? [],
-        },
-      ];
-    });
-  }
+		update((toasts) => {
+			return [
+				...toasts,
+				{
+					id,
+					...item
+				}
+			];
+		});
+	}
 
-  return {
-    subscribe,
-    addToast,
-  };
+	return {
+		update,
+		subscribe,
+		addToast
+	};
 }
 
 export const toasts = createToasts();
