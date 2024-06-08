@@ -31,7 +31,7 @@
 				</div>
 				<div class="flex items-center justify-center justify-start">
 					<button
-						class="border border-white text-white h-12 w-[170px] rounded-full text-xs sm:text-sm"
+						class="border border-white text-white h-12 w-[170px] rounded-full text-xs sm:text-sm bg-primary"
 						on:click={gotoPackage}>مشاهده رضایت</button
 					>
 				</div>

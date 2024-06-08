@@ -8,7 +8,20 @@
 </script>
 
 {#each $toasts as toast}
-	<div class="toast toast-center">
+	<div class="toast toast-center hidden sm:block">
+		<div
+			class="alert"
+			class:alert-info={toast.type == 'info'}
+			class:alert-success={toast.type == 'success'}
+			class:alert-error={toast.type == 'error'}
+			class:alert-warning={toast.type == 'warning'}
+			class:alert-primary={toast.type == 'primary'}
+		>
+			<span>{toast.text}</span>
+			<i class="las la-times" on:click={() => close(toast)} />
+		</div>
+	</div>
+	<div class="toast block sm:hidden">
 		<div
 			class="alert"
 			class:alert-info={toast.type == 'info'}
