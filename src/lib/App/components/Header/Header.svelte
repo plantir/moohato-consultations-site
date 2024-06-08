@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
 	import { createEventDispatcher } from 'svelte';
+	import ProfileBox from '../ProfileBox.svelte';
 	const dispatch = createEventDispatcher();
 	const gotoPackage = () => {
 		dispatch('gotoPackage');
@@ -11,40 +12,52 @@
 </script>
 
 <div class="header">
-	<img src="./images/background.png" class="w-full hidden sm:block" alt="" />
-	<img src="./images/background-mobile.png" class="w-full sm:hidden" alt="" />
-	<div class="container absolute top-1/2 -translate-y-1/2 right-1/2 translate-x-1/2">
+	<img src="./images/background.png" class="w-full hidden sm:block custom-image" alt="" />
+	<img src="./images/background-mobile.png" class="w-full sm:hidden custom-image" alt="" />
+	<div class="container pt-10">
 		<div class="relative flex flex-col sm:flex-row sm:gap-5 sm:pt-[70px]">
 			<div class="image-wrapper">
-				<img src="./images/doctor_image.png" alt="" />
+				<img src="./images/product.jpg" alt="" />
 			</div>
 			<div class="text-white sm:mb-16">
-				<div class="text-lg sm:text-2xl tracking-tight mb-3">درمان ریزش مو</div>
-				<div class="text-sm text-[#A7C0E3] text-justify mb-5 sm:mb-[70px]">
-					ریزش مو عوامل مختلفی دارد که اکثر این عوامل درونی هستند ، شما ابتدا باید دلایل ریزش موی
-					خود را شناخته و بعد برای درمان اقدام کنید . در مجموعه ی موهاتو با مشاورین متخصص م دریافت
-					مشاوره و با روش های کاملا گیاهی و بدون قرص و دارو ریزش موی خود را برای همیشه درمان کنید
+				<div class="text-lg sm:text-2xl tracking-tight mb-3">سرم سیر سیاه ساخت کشور فرانسه</div>
+				<ul class="text-sm text-white text-justify mb-4 properties">
+					<li>قطع ریزش مو</li>
+					<li>افزایش ضخامت مو</li>
+					<li>تقویت و رویش مجدد</li>
+				</ul>
+				<div class="text-animation text-center sm:text-right">
+					این محصول با ضمانت نامه ی کتبی عودت وجه در صورت نارضایتی ارائه میشود
 				</div>
-				<div class="flex items-center gap-3 justify-end">
+				<div class="flex items-center justify-center justify-start">
 					<button
 						class="border border-white text-white h-12 w-[170px] rounded-full text-xs sm:text-sm"
-						on:click={gotoPackage}>مشاهده پکیج</button
-					>
-					<button
-						class="bg-white text-primary h-12 w-[170px] rounded-full text-xs sm:text-sm"
-						on:click={gotoForm}>دریافت نوبت مشاوره</button
+						on:click={gotoPackage}>مشاهده رضایت</button
 					>
 				</div>
 			</div>
 		</div>
+		<ProfileBox class="mt-8" />
 	</div>
 </div>
 
 <style lang="scss">
+	.text-animation {
+		animation: custom infinite 3s;
+		font-weight: bold;
+		@apply mb-5;
+	}
+	.properties {
+		list-style-type: disc;
+		@apply mr-4;
+	}
+	.custom-image {
+		@apply absolute top-0 right-0 w-full;
+	}
 	.header {
 		@apply relative;
 		.image-wrapper {
-			@apply relative h-[116px] w-[116px] rounded-[40px] bg-white overflow-hidden mb-3;
+			@apply relative h-[116px] w-[116px] rounded-[40px] bg-white overflow-hidden mb-3 p-3 bg-white;
 			@media (min-width: 640px) {
 				@apply pb-[25%] h-0 rounded-[70px] overflow-visible;
 				flex: 0 0 25%;
@@ -52,10 +65,26 @@
 			img {
 				@apply absolute top-0 right-0 w-full;
 				@media screen and (min-width: 640px) {
-					@apply bottom-0;
+					@apply bottom-0 rounded-2xl;
 					top: unset;
 				}
 			}
+		}
+	}
+	@keyframes custom {
+		0% {
+			color: #fff;
+			// font-size: 16px;
+		}
+		50% {
+			color: #000;
+			// font-size: 18px;
+
+		}
+		100% {
+			color: #fff;
+			// font-size: 16px;
+
 		}
 	}
 </style>
