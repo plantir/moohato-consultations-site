@@ -52,7 +52,7 @@
 <div class="relative sm:mx-auto max-w-lg">
 	<div class="shadow-box" />
 	<div class="profile-box {$$props.class}">
-		<div class=" lg:pr-12">
+		<!-- <div class=" lg:pr-12">
 			<div class="bg-[#0B5ACC21] pb-4 flex flex-col gap-3 rounded-[45px]">
 				<div class="h-[200px] w-full bg-gray-400 rounded-[45px] flex justify-center items-center">
 					<img src="./images/form-image.jpg" class=" h-full max-h-full" alt="" />
@@ -61,7 +61,7 @@
 					<div class=" text-gray-900">نمونه ارسال عکس</div>
 				</div>
 			</div>
-		</div>
+		</div> -->
 		<div>
 			<div class="pr-8 border-b border-gray-200 pb-0.5">
 				<div class="flex items-center gap-2 text-xl font-medium tracking-tight text-primary -mr-8">
@@ -77,13 +77,16 @@
 						{message.message}
 					</div>
 				{/if} -->
+				<Input bind:value={form.mobile} placeholder="شماره همراه">
+					<IncomingCallSvgStroke class="stroke-[#130F26]" />
+				</Input>
 				<Input bind:value={form.name} placeholder="نام و نام خانوادگی">
 					<UserOutlineSvgStroke class="stroke-[#130F26]" />
 				</Input>
 				<Input bind:value={form.age} placeholder="سن">
 					<UserOutlineSvgStroke class="stroke-[#130F26]" />
 				</Input>
-				<div class="flex flex-col items-center justify-between gap-3">
+				<!-- <div class="flex flex-col items-center justify-between gap-3">
 					<FileInput bind:value={form.image} placeholder="آپلود عکس از کف سر">
 						<div class="bg-primary/20 w-10 h-10 rounded-2xl flex items-center justify-center">
 							<UploadSvgStroke class="stroke-primary" />
@@ -94,7 +97,7 @@
 							<img class="w-20" src={URL.createObjectURL(form.image)} alt="" />
 						</div>
 					{/if}
-				</div>
+				</div> -->
 				<div>
 					<Button class="flex-1 h-6" on:click={sendForm} loading={loading_btn}>ارسال</Button>
 				</div>
