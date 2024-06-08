@@ -16,13 +16,13 @@
 	let loading_btn = false;
 	const sendForm = async () => {
 		loading_btn = true;
-		if (form.name && form.mobile) {
+		if (form.name && form.mobile && form.age) {
 			try {
 				let data = {
 					name: form.name,
 					mobile: persianToEnglish(form.mobile),
 					category: 'hair',
-					image: form.image
+					age: form.age
 				};
 				const res = await HomeService.sendForm(data);
 				form = {};
