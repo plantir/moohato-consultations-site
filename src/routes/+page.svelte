@@ -154,7 +154,7 @@
 		<Packages class="mt-10 sm:mt-[180px]" items={data.hair_packages} />
 	</div>
 </div>
- <div class="relative">
+<div class="relative">
 	<SectionBg />
 	<div class="container absolute top-1/2 -translate-y-1/2 right-1/2 translate-x-1/2">
 		<div class="relative flex flex-col sm:flex-row sm:gap-16 sm:pb-[70px]">
