@@ -7,11 +7,11 @@
 		file_element.click();
 	};
 	const updateImage = (e: any) => {
-		console.log(e.target.files[0]);
+		value = e.target.files[0];
 	};
 </script>
 
 <input type="file" class="hidden" bind:this={file_element} on:change={updateImage} />
-<Input bind:value {placeholder} on:click={openFile}>
+<Input value={value?.name} {placeholder} on:click={openFile}>
 	<slot />
 </Input>
