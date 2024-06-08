@@ -16,13 +16,13 @@
 	let loading_btn = false;
 	const sendForm = async () => {
 		loading_btn = true;
-		if (form.name && form.mobile) {
+		if (form.name && form.mobile && form.age) {
 			try {
 				let data = {
 					name: form.name,
 					mobile: persianToEnglish(form.mobile),
 					category: 'hair',
-					image: form.image
+					age: form.age
 				};
 				const res = await HomeService.sendForm(data);
 				form = {};
@@ -113,7 +113,7 @@
 
 <style lang="scss">
 	.profile-box {
-		@apply bg-white p-4 sm:p-9 rounded-[30px] sm:rounded-[58px] grid md:grid-cols-2 gap-16 relative;
+		@apply bg-white p-4 sm:p-9 rounded-[30px] sm:rounded-[58px]  gap-16 relative;
 
 		> div {
 			position: relative;
