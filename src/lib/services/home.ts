@@ -7,6 +7,7 @@ class HomeService {
 			form.append('image', data.image);
 		}
 		form.append('name', data.name);
+		form.append('age', data.age);
 		form.append('mobile', data.mobile);
 		form.append('category', data.category);
 		return axios.post('consultations', form);
