@@ -26,10 +26,21 @@
 					<li>افزایش ضخامت مو</li>
 					<li>تقویت و رویش مجدد</li>
 				</ul>
-				<div class="text-animation text-center sm:text-right">
-					این محصول با ضمانت نامه ی کتبی عودت وجه در صورت نارضایتی ارائه میشود
-				</div>
-				<div class="flex items-center justify-center justify-start">
+				<a
+					class="flex items-center justify-center sm:justify-start my-4 gap-2 relative"
+					href="https://www.instagram.com/Moohato_"
+					target="_blank"
+				>
+					<div class="click-right rotate-90 scale-y-[-1]">
+						<img src="./images/click.png" class="w-8" alt="" />
+					</div>
+					<img src="./images/instagram.png" class="w-8" alt="" />
+					Moohato_
+					<div class="click-left rotate-90">
+						<img src="./images/click.png" class="w-8" alt="" />
+					</div>
+				</a>
+				<div class="flex items-center justify-center sm:justify-start">
 					<button
 						class="border border-white text-white h-12 w-[170px] rounded-full text-xs sm:text-sm bg-primary"
 						on:click={gotoPackage}>مشاهده رضایت</button
@@ -79,12 +90,10 @@
 		50% {
 			color: #000;
 			// font-size: 18px;
-
 		}
 		100% {
 			color: #fff;
 			// font-size: 16px;
-
 		}
 	}
 </style>
